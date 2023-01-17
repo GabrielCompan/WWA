@@ -9,6 +9,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './User/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
+import { LogoutComponent } from './User/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ShopComponent } from './shop/shop.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ShopComponent
+    ShopComponent,
+    LogoutComponent
   ],
   imports: [
     RouterModule,

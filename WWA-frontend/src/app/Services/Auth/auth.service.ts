@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import * as bcrypt from 'bcryptjs';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  loggedIn: Subject<boolean> = new Subject<boolean>();
 
   constructor() { }
 
@@ -16,4 +19,10 @@ export class AuthService {
   comparePasswords(password: string, hash: string): boolean {
     return bcrypt.compareSync(password, hash);
   }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.loggedIn.next(false);
+  }
+
 }

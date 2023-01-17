@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validator, Validators} from '@angular/forms';
 import {AuthService} from '../../Services/Auth/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit{
 
   loginForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) {}
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit{
       if (this.authService.comparePasswords(password, hashedPassword)) {
         // Log the user in
         console.log('Logged in successfully');
-        // navigate to the desired page
+        this.router.navigate(['/home'])
       } else {
         // Show an error message
         console.log('Incorrect username or password');
@@ -43,6 +44,6 @@ export class LoginComponent implements OnInit{
   getHashedPasswordFromDB(username: string): string {
     // Replace this with a call to your backend service
     // to get the hashed password from the database
-    return '$2a$10$p6nJLF5r5J5ux5.5Y5Z5G5u5F5x5b5';
+    return '$2a$10$2GiHOr2KcXUz0mnrFw0YfeXrwy.Fr1bGDbUKJydOlHZG14YMv5lsG';
   }
 }
