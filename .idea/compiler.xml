@@ -6,13 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="WWA-Store" />
+        <module name="store-service" />
         <module name="WWA-Users" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="store-service" target="17" />
       <module name="WWA-Store" target="19" />
       <module name="WWA-Users" target="19" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="store-service" options="-parameters" />
+    </option>
   </component>
 </project>

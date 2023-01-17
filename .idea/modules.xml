@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/WWA.iml" filepath="$PROJECT_DIR$/.idea/WWA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/WWA-Store/WWA-Store.iml" filepath="$PROJECT_DIR$/WWA-Store/WWA-Store.iml" />
       <module fileurl="file://$PROJECT_DIR$/WWA-Users/WWA-Users.iml" filepath="$PROJECT_DIR$/WWA-Users/WWA-Users.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WWA-Store/store-service.iml" filepath="$PROJECT_DIR$/WWA-Store/store-service.iml" />
     </modules>
   </component>
 </project>
