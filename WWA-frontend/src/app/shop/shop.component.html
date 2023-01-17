@@ -1,1 +1,35 @@
-<p>shop works!</p>
+<div class="shop-page">
+  <nav class="menu">
+    <a routerLink="/home">Home</a>
+  </nav>
+  <h1>Egg Shop</h1>
+  <div class="currency">
+    Pokedollars: <span id="pokedollars">100</span>
+  </div>
+  <div class="egg-container">
+    <div class="egg">
+      <img src="../../assets/pokemon_egg.png" alt="Egg">
+      <p>Egg 1</p>
+      <div class="price">
+        Price: <span id="egg1-price">50</span> pokedollars
+      </div>
+      <button (click)="buyEgg(1)">Buy</button>
+    </div>
+    <div class="egg">
+      <img src="../../assets/pokemon_egg.png" alt="Egg">
+      <p>Egg 2</p>
+      <div class="price">
+        Price: <span id="egg2-price">70</span> pokedollars
+      </div>
+      <button (click)="buyEgg(2)">Buy</button>
+    </div>
+    <div class="egg">
+      <img src="../../assets/pokemon_egg.png" alt="Egg">
+      <p>Egg 3</p>
+      <div class="price">
+        Price: <span id="egg3-price">90</span> pokedollars
+      </div>
+      <button (click)="buyEgg(3)">Buy</button>
+    </div>
+  </div>
+</div>

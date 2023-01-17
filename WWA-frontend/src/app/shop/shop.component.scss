@@ -1,0 +1,54 @@
+.shop-page {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.currency {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.egg-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.egg {
+  width: 20%;
+  margin: 10px;
+  text-align: center;
+}
+
+.egg img {
+  width: 100%;
+}
+
+.price {
+  font-size: 18px;
+  color: #999999;
+  font-weight: bold;
+}
+
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+nav.menu {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+nav.menu a {
+  color: white;
+  text-decoration: none;
+}
+
