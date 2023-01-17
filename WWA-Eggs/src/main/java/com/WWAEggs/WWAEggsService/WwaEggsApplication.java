@@ -1,4 +1,4 @@
-package com.WWAEggs.WWAEggs;
+package com.WWAEggs.WWAEggsService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
