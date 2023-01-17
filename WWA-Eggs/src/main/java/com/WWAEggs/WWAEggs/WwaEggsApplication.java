@@ -4,8 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EggsServiceApplication {
+public class WwaEggsApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(EggsServiceApplication.class, args);
+		SpringApplication.run(WwaEggsApplication.class, args);
 	}
 }
