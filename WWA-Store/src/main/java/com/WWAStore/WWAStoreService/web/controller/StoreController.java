@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 public class StoreController {
     @CrossOrigin()
-    @GetMapping("/eggs")
+    @GetMapping("/store")
     public String[] EggsList() {
         return new String[] { "1","Egg1", "17","3"};
     }
