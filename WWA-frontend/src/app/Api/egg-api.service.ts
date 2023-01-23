@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EggApiService {
-  baseUrl = 'https://your-api-base-url.com';
+  baseUrl = 'https://localhost:8082';
 
   constructor(private http: HttpClient) {}
 

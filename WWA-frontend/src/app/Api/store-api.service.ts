@@ -7,7 +7,7 @@ import {Egg} from '../model/egg';
   providedIn: 'root'
 })
 export class StoreApiService {
-  baseUrl = 'https://your-api-base-url.com';
+  baseUrl = 'https://localhost:8081';
 
   constructor(private http: HttpClient) {}
 
