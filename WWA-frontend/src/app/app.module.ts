@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { StoreComponent } from './store/store.component';
 import { LogoutComponent } from './User/logout/logout.component';
 import { HatchingComponent } from './hatching/hatching.component';
+import { EggComponent } from './egg/egg.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { HatchingComponent } from './hatching/hatching.component';
     HomeComponent,
     StoreComponent,
     LogoutComponent,
-    HatchingComponent
+    HatchingComponent,
+    EggComponent
   ],
   imports: [
     RouterModule,
     ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

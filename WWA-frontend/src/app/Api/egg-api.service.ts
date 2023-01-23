@@ -13,6 +13,7 @@ export class EggApiService {
 
   // Send a GET request to the API to get a list of eggs
   getEggs(): Observable<Egg[]> {
+    console.log("api called");
     return this.http.get<Egg[]>(`${this.baseUrl}/eggs`);
   }
 
