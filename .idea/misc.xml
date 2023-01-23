@@ -3,7 +3,6 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/WWA-Store/pom.xml" />
         <option value="$PROJECT_DIR$/WWA-Users/pom.xml" />
       </list>
     </option>

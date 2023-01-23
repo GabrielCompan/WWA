@@ -1,0 +1,22 @@
+{
+  "name": "wwa-trainer",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "ng test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gradlew.bat : Le terme «gradlew.bat» n'est pas reconnu comme nom d'applet de commande, fonction, fichier de script ou programme exécutable. Vérifiez l'orthographe du nom, ou si un chemin d'accès existe, vérifiez que le chemin "
+  },
+  "keywords": [
+    "d'accès",
+    "est",
+    "correct",
+    "et",
+    "réessayez."
+  ],
+  "author": "Au caractère Ligne:1 : 1",
+  "license": "ISC"
+}
