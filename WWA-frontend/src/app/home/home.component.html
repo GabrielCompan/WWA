@@ -6,6 +6,7 @@
     <li><a routerLink="/fights">Fights</a></li>
     <li><a routerLink="/reports">Reports</a></li>
     <li><a routerLink="/options">Options</a></li>
-    <li><a routerLink="/logout">Logout</a></li>
+    <li *ngIf="isLogged"><app-logout></app-logout></li>
+    <li *ngIf="!isLogged"><a routerLink="/login">Login</a> </li>
   </ul>
 </nav>
