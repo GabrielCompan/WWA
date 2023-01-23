@@ -8,8 +8,9 @@ import {RouterModule} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './User/register/register.component';
 import { HomeComponent } from './home/home.component';
-import { ShopComponent } from './shop/shop.component';
+import { StoreComponent } from './store/store.component';
 import { LogoutComponent } from './User/logout/logout.component';
+import { HatchingComponent } from './hatching/hatching.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { LogoutComponent } from './User/logout/logout.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ShopComponent,
-    LogoutComponent
+    StoreComponent,
+    LogoutComponent,
+    HatchingComponent
   ],
   imports: [
     RouterModule,
