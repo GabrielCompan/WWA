@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit{
       // Compare the entered password with the hashed password
       if (this.authService.comparePasswords(password, hashedPassword)) {
         // Log the user in
+        this.authService.login();
         console.log('Logged in successfully');
         this.router.navigate(['/home'])
       } else {

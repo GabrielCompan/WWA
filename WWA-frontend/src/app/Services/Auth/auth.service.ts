@@ -25,4 +25,8 @@ export class AuthService {
     this.loggedIn.next(false);
   }
 
+  login() {
+    this.loggedIn.next(true);
+  }
+
 }
