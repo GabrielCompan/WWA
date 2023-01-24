@@ -5,5 +5,5 @@ export interface Egg{
   name: string,
   price: number,
   hatchingTime: number,
-  owner: Trainer
+  //owner: Trainer
 }
