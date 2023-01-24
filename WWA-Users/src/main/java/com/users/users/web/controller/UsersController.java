@@ -28,6 +28,4 @@ public class UsersController {
         int login = usersService.verifyLogin(email, password);
         return login;
     }
-
-
 }
