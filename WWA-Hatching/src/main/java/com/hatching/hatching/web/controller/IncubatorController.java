@@ -18,7 +18,7 @@ public class IncubatorController {
 
     @Autowired
     private IncubatorService incubatorService;
-    @PostMapping(path="/add") // Map ONLY POST Requests
+    @PostMapping(path="/hatching/add") // Map ONLY POST Requests
     public @ResponseBody String addNewIncubator (@RequestParam int id
             , @RequestParam int idEgg) {
         incubatorService.saveIncubator(id, idEgg);
@@ -31,4 +31,6 @@ public class IncubatorController {
         List<Incubator> incubators = (List<Incubator>) incubatorService.getAllIncubators();
         return ResponseEntity.ok(incubators);
     }
+
+
 }
