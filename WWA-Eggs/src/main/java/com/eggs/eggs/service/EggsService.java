@@ -11,7 +11,7 @@ public class EggsService {
     @Autowired
     private EggsRepository eggsRepository;
 
-    public void saveEggs(String name, double price, int hatchingTime) {
+    public void saveEggs(int id, String name, double price, int hatchingTime) {
         Eggs e = new Eggs();
         e.setName(name);
         e.setPrice(price);
@@ -22,4 +22,3 @@ public class EggsService {
         return eggsRepository.findAll();
     }
 };
-
