@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PokemonApiService {
-  baseUrl = 'https://localhost:8087';
+  baseUrl = 'http://localhost:8087';
 
   constructor(private http: HttpClient) {}
 

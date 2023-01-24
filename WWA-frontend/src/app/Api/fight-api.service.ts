@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FightApiService {
-  baseUrl = 'https://localhost:8085';
+  baseUrl = 'http://localhost:8085';
 
   constructor(private http: HttpClient) {}
 

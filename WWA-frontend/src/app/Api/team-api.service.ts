@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TeamApiService {
-  baseUrl = 'https://localhost:8086';
+  baseUrl = 'http://localhost:8086';
 
   constructor(private http: HttpClient) {}
 
