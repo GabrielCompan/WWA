@@ -13,6 +13,9 @@ import { LogoutComponent } from './User/logout/logout.component';
 import { HatchingComponent } from './hatching/hatching.component';
 import { EggComponent } from './egg/egg.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { TeamComponent } from './team/team.component';
+import { FightComponent } from './fight/fight.component';
+import { TrainerComponent } from './trainer/trainer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     StoreComponent,
     LogoutComponent,
     HatchingComponent,
-    EggComponent
+    EggComponent,
+    TeamComponent,
+    FightComponent,
+    TrainerComponent
   ],
   imports: [
     RouterModule,
