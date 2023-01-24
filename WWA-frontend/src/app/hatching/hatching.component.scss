@@ -1,0 +1,12 @@
+.back-button {
+  background-color: #4CAF50; /* green background */
+  color: white; /* white text */
+  padding: 14px 16px; /* add some padding */
+  border-radius: 10px; /* rounded corners */
+  font-size: 16px; /* increase font size */
+}
+
+.back-button:hover {
+  background-color: white; /* change background color on hover */
+  color: #4CAF50; /* change text color on hover */
+}

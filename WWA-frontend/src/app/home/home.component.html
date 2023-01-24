@@ -1,11 +1,11 @@
 <nav>
   <ul>
     <li><a routerLink="/team">Team</a></li>
-    <li><a routerLink="/shop">Shop</a></li>
-    <li><a routerLink="/eggs">Eggs</a></li>
-    <li><a routerLink="/fights">Fights</a></li>
+    <li><a routerLink="/store">Store</a></li>
+    <li><a routerLink="/trainer">Trainer</a></li>
+    <li><a routerLink="/fight">Fight</a></li>
     <li><a routerLink="/reports">Reports</a></li>
-    <li><a routerLink="/options">Options</a></li>
+    <li><a routerLink="/hatching">Hatching</a></li>
     <li *ngIf="isLogged"><app-logout></app-logout></li>
     <li *ngIf="!isLogged"><a routerLink="/login">Login</a> </li>
   </ul>
