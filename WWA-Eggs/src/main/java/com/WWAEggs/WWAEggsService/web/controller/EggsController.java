@@ -1,5 +1,7 @@
 package com.WWAEggs.WWAEggsService.web.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,15 +13,18 @@ import java.util.ArrayList;
 
 @RestController
 public class EggsController {
+    @Bean
     @CrossOrigin()
-    class EggsList {
-        public static void main(String[] args) {
-            ArrayList<Eggs> eggsList = new ArrayList<Eggs>();
+    @GetMapping("/eggs")
+    public ArrayList<Eggs> main() {
+        ArrayList<Eggs> eggsList = new ArrayList<Eggs>();
 
-            eggsList.add(new Eggs(1, "Egg1", 17, 180));
-            eggsList.add(new Eggs(2, "Egg2", 12, 120));
-            eggsList.add(new Eggs(3, "Egg3", 14, 210));
-            eggsList.add(new Eggs(4, "Egg4", 25, 300));
-        }
+        eggsList.add(new Eggs(1, "Egg1", 17, 180));
+        eggsList.add(new Eggs(2, "Egg2", 12, 120));
+        eggsList.add(new Eggs(3, "Egg3", 14, 210));
+        eggsList.add(new Eggs(4, "Egg4", 25, 300));
+
+        return eggsList;
+
     }
 }
