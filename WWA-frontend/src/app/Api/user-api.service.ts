@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class UserApiService {
   baseUrl = 'https://localhost:8080';
-
   constructor(private http: HttpClient) {}
 
   // Send a GET request to the API to get a list of users

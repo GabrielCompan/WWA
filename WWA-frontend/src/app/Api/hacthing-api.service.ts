@@ -9,7 +9,7 @@ import {Incubator} from '../model/incubator';
   providedIn: 'root'
 })
 export class HatchingApiService {
-  baseUrl = 'https://localhost:8083';
+  baseUrl = 'http://localhost:8083';
 
   constructor(private http: HttpClient) {}
 
