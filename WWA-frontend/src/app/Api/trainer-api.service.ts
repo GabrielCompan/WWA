@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TrainerApiService {
-  baseUrl = 'https://localhost:8084';
+  baseUrl = 'http://localhost:8084';
 
   constructor(private http: HttpClient) {}
 
