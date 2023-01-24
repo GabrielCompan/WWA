@@ -18,7 +18,12 @@ public class EggsController {
     @Autowired
     private EggsService eggsService;
     @PostMapping(path="/eggs/add") // Map ONLY POST Requests
-    public @ResponseBody String addNewEggs (@RequestParam int id, @RequestParam String name, @RequestParam double price, @RequestParam int hatchingTime){
+    public @ResponseBody String addNewEggs (@RequestParam int id)
+    {
+        String name = "Egg"+id;
+        double price = Math.random() * (100 - 1) + 1;
+        int hatchingTime = (int)(Math.random() * (500 - 30 + 1) + 30);
+
         eggsService.saveEggs(id, name, price, hatchingTime);
         return "Saved";
     }
