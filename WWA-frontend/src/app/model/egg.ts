@@ -1,4 +1,4 @@
-import {Trainer} from './trainer';
+//import {Trainer} from './trainer';
 
 export interface Egg{
   id: number,

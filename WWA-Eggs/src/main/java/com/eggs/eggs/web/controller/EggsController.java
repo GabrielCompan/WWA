@@ -13,10 +13,12 @@ import java.util.List;
 import java.util.ArrayList;
 
 @RestController
+@CrossOrigin
 public class EggsController {
 
     @Autowired
     private EggsService eggsService;
+    @CrossOrigin()
     @PostMapping(path="/eggs/add") // Map ONLY POST Requests
     public @ResponseBody String addNewEggs (@RequestParam int id)
     {
