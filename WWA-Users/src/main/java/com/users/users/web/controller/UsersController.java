@@ -16,7 +16,7 @@ public class UsersController {
     @Autowired
     private UsersService usersService;
     @PostMapping(path="/register")
-    public @ResponseBody String addNewIncubator (@RequestParam String name
+    public @ResponseBody String addNewUser(@RequestParam String name
             , @RequestParam String email, @RequestParam String password) {
         usersService.saveUser(name, email, password);
         return "Saved";
@@ -24,7 +24,7 @@ public class UsersController {
 
     @CrossOrigin()
     @PostMapping("/login")
-    public int getIncubators(@RequestParam String email, @RequestParam String password) {
+    public int getUsers(@RequestParam String email, @RequestParam String password) {
         int login = usersService.verifyLogin(email, password);
         return login;
     }
