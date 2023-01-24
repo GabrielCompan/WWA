@@ -1,10 +1,10 @@
-package com.WWATrainer.WWATrainer;
+package com.Trainer.Trainer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WwaTrainerApplicationTests {
+class TrainerApplicationTests {
 
 	@Test
 	void contextLoads() {
