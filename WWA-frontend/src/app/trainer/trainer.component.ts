@@ -24,7 +24,7 @@ export class TrainerComponent implements OnInit {
     this.trainerService.getTrainerById(id).subscribe((data: Trainer) => {this.trainer = data});
   }
 
-  addPokeDollars(amount: number) {
+  addPokeDollars(idTrainer: number, amount: number) {
     this.trainerService.addPokeDollars(this.trainer.id, amount);
   }
 
