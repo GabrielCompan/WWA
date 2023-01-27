@@ -11,15 +11,12 @@ public class TrainerService {
 
     private TrainerRepository trainerRepository;
 
-    public void saveTrainer(String name) {
+    public Trainer saveTrainer(String name) {
         Trainer n = new Trainer();
         n.setName(name);
         n.setPokeDollar(50);
-        n.setIdPokelist(98);
         trainerRepository.save(n);
-    }
-    public Iterable<Trainer> getAllTrainers() {
-        return trainerRepository.findAll();
+        return n;
     }
 
     public Trainer getTrainerbyId(int idtrainer) {
@@ -32,16 +29,16 @@ public class TrainerService {
         trainerRepository.save(trainer);
     }
 
-    public int addPokedollar(int value, int idTrainer) {
+    public Trainer addPokedollar(int idTrainer, int value) {
         Trainer trainer = getTrainerbyId(idTrainer);
         int valuedb = trainer.getPokeDollar();
         trainer.setPokeDollar(valuedb + value);
         trainerRepository.save(trainer);
-        return valuedb + value;
+        return trainer;
 
     }
 
-    public int withdrawPokedollar(int value, int idTrainer) {
+    public int withdrawPokedollar(int idTrainer, int value) {
         Trainer trainer = getTrainerbyId(idTrainer);
         int valuedb = trainer.getPokeDollar();
         int newvalue = valuedb - value;
@@ -57,8 +54,20 @@ public class TrainerService {
 
     }
 
+    public void addPokemon(int idTrainer, int idPokemon) {
+        Trainer trainer = getTrainerbyId(idTrainer);
+        trainer.addPokemon(idPokemon);
+        trainerRepository.save(trainer);
+    }
+
+    public void withdrawPokemon(int idTrainer, int idPokemon) {
+        Trainer trainer = getTrainerbyId(idTrainer);
+        trainer.withdrawPokemon(idPokemon);
+        trainerRepository.save(trainer);
+    }
+
     public Iterable<Trainer> allTrainers() {
         return trainerRepository.findAll();
     }
-};
+}
 

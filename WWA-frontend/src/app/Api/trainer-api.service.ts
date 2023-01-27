@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Trainer} from '../model/trainer';
 import { Observable } from 'rxjs';
+import {parseJson} from "@angular/cli/src/utilities/json-file";
 
 @Injectable({
   providedIn: 'root'
@@ -17,13 +18,21 @@ export class TrainerApiService {
   }
 
   // Send a GET request to the API to get a trainer by id
-  getTrainer(id: number): Observable<Trainer> {
+  getTrainerById(id: number): Observable<Trainer> {
     return this.http.get<Trainer>(`${this.baseUrl}/trainers/${id}`);
   }
 
+  addPokeDolloars(id: number, amount: number) {
+    console.log("api called", id, amount);
+    return this.http.post<Trainer>(`${this.baseUrl}/trainers/addPokeDollars/${id}`, {
+      value: amount
+    });
+  }
+
   // Send a POST request to the API to add a new trainer
-  addTrainer(trainer: Trainer): Observable<Trainer> {
-    return this.http.post<Trainer>(`${this.baseUrl}/trainers`, trainer);
+  addTrainer(name: string): Observable<Trainer> {
+    console.log("api called");
+    return this.http.post<Trainer>(`${this.baseUrl}/trainers/addTrainer/${name}`, name);
   }
 
   // Send a PUT request to the API to update a trainer
