@@ -1,12 +1,15 @@
+
 <nav>
   <ul>
-    <li><a routerLink="/team">Team</a></li>
-    <li><a routerLink="/store">Store</a></li>
-    <li><a routerLink="/trainer">Trainer</a></li>
-    <li><a routerLink="/fight">Fight</a></li>
-    <li><a routerLink="/reports">Reports</a></li>
-    <li><a routerLink="/hatching">Hatching</a></li>
+    <img src="https://i.ibb.co/T0QmRLD/WWA.png" alt="Logo WWA" class="logo-img"/>
+    <button routerLink="/team" class="back-button">Team</button>
+    <button routerLink="/store" class="back-button">Store</button>
+    <button routerLink="/trainer" class="back-button">Trainer</button>
+    <button routerLink="/fight" class="back-button">Fight</button>
+    <button routerLink="/reports" class="back-button">Reports</button>
+    <button routerLink="/hatching" class="back-button">Hatching</button>
     <li *ngIf="isLogged"><app-logout></app-logout></li>
-    <li *ngIf="!isLogged"><a routerLink="/login">Login</a> </li>
+    <li *ngIf="!isLogged"><button routerLink="/login" class="back-button">Login</button> </li>
   </ul>
 </nav>
+

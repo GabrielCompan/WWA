@@ -1,11 +1,12 @@
 
 nav {
-  background-image: url('../../assets/background.webp');
+  //background-image: url('../../assets/background.webp');
+  background-color : #03051b;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 70%;
+  height: 60%;
   position: absolute;
   top: 15%;
   left: 25%;
@@ -32,7 +33,35 @@ nav a {
   transition: all 0.2s ease-in-out;
 }
 nav a:hover {
-  background-color: #4CAF50;
+  background-color: #fee998;
   color: #fff;
   border-color: transparent;
+}
+
+.back-button {
+  background-color: #fee998; /* green background */
+  color: #fb5d24; /* white text */
+  padding: 7px 16px; /* add some padding */
+  border-radius: 20px; /* rounded corners */
+  font-size: 20px; /* increase font size */
+  border-color: #fb5d24;
+}
+
+.back-button:hover {
+  background-color: #fb5d24; /* change background color on hover */
+  color: #fee998; /* change text color on hover */
+}
+
+.logo-img{
+  display: block;
+  margin: 0 auto;
+  //text-align: center;
+}
+
+img{
+    width: 50%;
+    height:45%;
+    display:block;
+    margin:10 auto;
+    text-align:center;
 }
