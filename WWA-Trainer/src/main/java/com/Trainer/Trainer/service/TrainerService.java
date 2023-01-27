@@ -33,5 +33,33 @@ public class TrainerService {
         trainerRepository.save(trainer);
     }
 
+    public int addPokedollar(int value, int idTrainer) {
+        Trainer trainer = getTrainerbyId(idTrainer);
+        int valuedb = trainer.getPokeDollar();
+        trainer.setPokeDollar(valuedb + value);
+        trainerRepository.save(trainer);
+        return valuedb + value;
+
+    }
+
+    public int withdrawPokedollar(int value, int idTrainer) {
+        Trainer trainer = getTrainerbyId(idTrainer);
+        int valuedb = trainer.getPokeDollar();
+        int newvalue = valuedb - value;
+        if(newvalue < 0) {
+            throw new IllegalArgumentException("PokeDollar cannot be negative");
+        }
+        else
+        {
+            trainer.setPokeDollar(newvalue);
+        }
+        trainerRepository.save(trainer);
+        return newvalue;
+
+    }
+
+    public Iterable<Trainer> allTrainers() {
+        return trainerRepository.findAll();
+    }
 };
 

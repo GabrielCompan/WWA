@@ -1,13 +1,10 @@
 package com.Trainer.Trainer.controller;
 
+import com.Trainer.Trainer.model.Trainer;
 import com.Trainer.Trainer.service.TrainerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import com.Trainer.Trainer.model.Trainer;
-
-import java.util.List;
 
 @RestController
 @Controller
@@ -16,7 +13,7 @@ public class TrainerController {
     @Autowired
     private TrainerService trainerService;
     @CrossOrigin()
-    @PostMapping(path="/saveTrainer")
+        @PostMapping(path="/Trainer")
     public @ResponseBody String addNewUser(@RequestParam String name) {
         trainerService.saveTrainer(name);
         return "Saved";
@@ -30,10 +27,22 @@ public class TrainerController {
     }
 
     @CrossOrigin()
-    @PostMapping(path="/getalltrainers")
-    public @ResponseBody ResponseEntity<List<Trainer>> addNewUser() {
-        List<Trainer> trainers = (List<Trainer>) trainerService.getAllTrainers();
-        return ResponseEntity.ok(trainers);
-
+    @PostMapping(path="/addPokedollar")
+    public int addPokedollar(@RequestParam int value, @RequestParam int idtrainer) {
+        return trainerService.addPokedollar(value, idtrainer);
     }
+
+    @CrossOrigin()
+    @PostMapping(path="/withdrawPokedollar")
+    public int withdrawPokedollar(@RequestParam int value, @RequestParam int idtrainer) {
+        return trainerService.withdrawPokedollar(value, idtrainer);
+    }
+
+    @CrossOrigin()
+    @GetMapping(path="/allTrainers")
+    public Iterable<Trainer> withdrawPokedollar() {
+        return trainerService.allTrainers();
+    }
+
+
 }
