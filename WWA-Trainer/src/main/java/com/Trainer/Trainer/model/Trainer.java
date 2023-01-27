@@ -1,7 +1,5 @@
 package com.Trainer.Trainer.model;
-
 import jakarta.persistence.*;
-
 import java.util.List;
 
 
@@ -12,13 +10,10 @@ public class Trainer {
     private int id;
 
     @OneToMany(cascade = CascadeType.ALL)
-
     private List<Egg> eggs;
 
-    private int idTeam;
-    private String nameEgg;
-
-    private int idPokelist;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Pokemon> Pokemons;
 
     private String name;
 
@@ -27,36 +22,19 @@ public class Trainer {
 
     }
 
+    public void addPokemon(int idPokemon) {
+        this.Pokemons.add(new Pokemon(idPokemon));
+
+    }
+
+    public void withdrawPokemon(int idPokemon) {
+        this.Pokemons.remove(new Pokemon(idPokemon));
+    }
+
     private enum type {User, Bot};
-
     private int pokeDollar;
-
     public int getId() {
         return id;
-    }
-    public int getIdTeam() {
-        return idTeam;
-    }
-    public void setIdTeam(int idTeam) {
-        this.idTeam = idTeam;
-    }
-//    public int getIdEgg() {
-//        return idEgg;
-//    }
-//    public void setIdEgg(int idEgg) {
-//        this.idEgg = idEgg;
-//    }
-    public String getNameEgg() {
-        return nameEgg;
-    }
-    public void setNameEgg(String nameEgg) {
-        this.nameEgg = nameEgg;
-    }
-    public int getIdPokelist() {
-        return idPokelist;
-    }
-    public void setIdPokelist(int idPokelist) {
-        this.idPokelist = idPokelist;
     }
     public String getName() {
         return name;

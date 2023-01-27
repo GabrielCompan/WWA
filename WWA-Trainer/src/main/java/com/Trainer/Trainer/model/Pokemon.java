@@ -6,12 +6,12 @@ import jakarta.persistence.Id;
 @Entity
 public class Pokemon {
     @Id
-    private int idEgg;
+    private int idPokemon;
 
     public Pokemon() {
     }
-    public Pokemon(int idEgg) {
-        this.idEgg = idEgg;
+    public Pokemon(int idPokemon) {
+        this.idPokemon = idPokemon;
     }
 
 
