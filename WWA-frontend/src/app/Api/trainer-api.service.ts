@@ -17,8 +17,12 @@ export class TrainerApiService {
   }
 
   // Send a GET request to the API to get a trainer by id
-  getTrainer(id: number): Observable<Trainer> {
+  getTrainerById(id: number): Observable<Trainer> {
     return this.http.get<Trainer>(`${this.baseUrl}/trainers/${id}`);
+  }
+
+  addPokeDolloars(id: number, amount: number) {
+    return this.http.post(`${this.baseUrl}/trainers/${id}/addPokeDollars/${amount}`, {});
   }
 
   // Send a POST request to the API to add a new trainer
