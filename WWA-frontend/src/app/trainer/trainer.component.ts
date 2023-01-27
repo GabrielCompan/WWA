@@ -14,10 +14,10 @@ export class TrainerComponent implements OnInit {
   constructor(private trainerService: TrainerService) { }
 
   ngOnInit() {
-    this.getTrainerById(1)
-    if (this.trainer == null) {
+    //this.getTrainerById(1)
+   // if (this.trainer == null) {
       this.addTrainer("Ash");
-    }
+   // }
   }
 
   getTrainerById(id: number) {
@@ -25,11 +25,12 @@ export class TrainerComponent implements OnInit {
   }
 
   addPokeDollars(idTrainer: number, amount: number) {
-    this.trainerService.addPokeDollars(this.trainer.id, amount);
+    this.trainerService.addPokeDollars(idTrainer, amount).subscribe((data: Trainer) => {this.trainer = data});
   }
 
   addTrainer(name: string) {
-    this.trainerService.addTrainer(name);
+    this.trainerService.addTrainer(name).subscribe((data: Trainer) => {this.trainer = data});
+
   }
 
 }

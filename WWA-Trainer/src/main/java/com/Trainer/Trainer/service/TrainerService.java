@@ -12,14 +12,12 @@ public class TrainerService {
 
     private TrainerRepository trainerRepository;
 
-    public void saveTrainer(String name) {
+    public Trainer saveTrainer(String name) {
         Trainer n = new Trainer();
         n.setName(name);
         n.setPokeDollar(50);
         trainerRepository.save(n);
-    }
-    public Iterable<Trainer> getAllTrainers() {
-        return trainerRepository.findAll();
+        return n;
     }
 
     public Trainer getTrainerbyId(int idtrainer) {
@@ -32,12 +30,12 @@ public class TrainerService {
         trainerRepository.save(trainer);
     }
 
-    public int addPokedollar(int idTrainer, int value) {
+    public Trainer addPokedollar(int idTrainer, int value) {
         Trainer trainer = getTrainerbyId(idTrainer);
         int valuedb = trainer.getPokeDollar();
         trainer.setPokeDollar(valuedb + value);
         trainerRepository.save(trainer);
-        return valuedb + value;
+        return trainer;
 
     }
 

@@ -32,7 +32,7 @@ public class Trainer {
     }
 
     private enum type {User, Bot};
-    private int pokeDollar;
+        private int pokeDollar;
     public int getId() {
         return id;
     }

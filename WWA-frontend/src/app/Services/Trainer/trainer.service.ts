@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {TrainerApiService} from '../../Api/trainer-api.service';
+import {Observable} from "rxjs";
+import {Trainer} from "../../model/trainer";
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +15,10 @@ export class TrainerService {
   }
 
   addPokeDollars(id: number, amount: number) {
-    this.trainerApiService.addPokeDolloars(id, amount);
+    return this.trainerApiService.addPokeDolloars(id, amount);
   }
 
-  addTrainer(name: string) {
-    this.trainerApiService.addTrainer(name);
+  addTrainer(name: string): Observable<Trainer> {
+    return this.trainerApiService.addTrainer(name);
   }
 }
