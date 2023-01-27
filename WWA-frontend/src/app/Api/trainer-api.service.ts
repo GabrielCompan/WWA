@@ -27,7 +27,7 @@ export class TrainerApiService {
 
   // Send a POST request to the API to add a new trainer
   addTrainer(name: string): Observable<Trainer> {
-    return this.http.post<Trainer>(`${this.baseUrl}/Trainer`, name);
+    return this.http.post<Trainer>(`${this.baseUrl}/trainers/addTrainer`, name);
   }
 
   // Send a PUT request to the API to update a trainer
