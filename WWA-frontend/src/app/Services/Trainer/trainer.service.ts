@@ -15,4 +15,8 @@ export class TrainerService {
   addPokeDollars(id: number, amount: number) {
     this.trainerApiService.addPokeDolloars(id, amount);
   }
+
+  addTrainer(name: string) {
+    this.trainerApiService.addTrainer(name);
+  }
 }

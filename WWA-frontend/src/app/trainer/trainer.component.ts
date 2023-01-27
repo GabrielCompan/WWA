@@ -16,11 +16,7 @@ export class TrainerComponent implements OnInit {
   ngOnInit() {
     this.getTrainerById(1)
     if (this.trainer == null) {
-      this.trainer = {
-        id: 1,
-        name: 'Ash',
-        money: 0,
-      }
+      this.addTrainer("Ash");
     }
   }
 
@@ -29,7 +25,11 @@ export class TrainerComponent implements OnInit {
   }
 
   addPokeDollars(amount: number) {
+    this.trainerService.addPokeDollars(this.trainer.id, amount);
+  }
 
+  addTrainer(name: string) {
+    this.trainerService.addTrainer(name);
   }
 
 }
