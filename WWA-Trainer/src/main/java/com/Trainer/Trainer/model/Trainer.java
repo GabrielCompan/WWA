@@ -24,7 +24,6 @@ public class Trainer {
 
     public void addEgg(int idEgg) {
         this.eggs.add(new Egg(idEgg));
-
     }
 
     private enum type {User, Bot};

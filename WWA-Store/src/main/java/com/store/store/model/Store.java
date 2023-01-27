@@ -1,39 +1,21 @@
 package com.store.store.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 public class Store {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;
-    private double price;
-    private int hatchingTime;
 
-    public int getId() {
-        return id;
-    }
-    public String getName() {
-        return name;
-    }
-    public double getPrice() {
-        return price;
-    }
-    public int getHatchingTime() {
-        return hatchingTime;
-    }
+    @OneToMany(cascade = CascadeType.ALL)
 
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-    public void setHatchingTime(int hatchingTime) {
-        this.hatchingTime = hatchingTime;
-    }
+    private List<Egg> eggs;
 
+    private String nameEgg;
+
+    public void addEgg(int idEgg) {
+        this.eggs.add(new Egg(idEgg));
+    }
 }

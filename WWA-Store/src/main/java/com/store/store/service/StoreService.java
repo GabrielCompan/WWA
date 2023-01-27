@@ -1,6 +1,7 @@
 package com.store.store.service;
 
 import com.store.store.repository.StoreRepository;
+import com.store.store.model.Egg;
 import com.store.store.model.Store;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,14 +11,12 @@ public class StoreService {
     @Autowired
     private StoreRepository storeRepository;
 
-    public void saveEggs(int id, String name, double price, int hatchingTime) {
-        Store e = new Store();
-        e.setName(name);
-        e.setPrice(price);
-        e.setHatchingTime(hatchingTime);
-        storeRepository.save(e);
-    }
-    public Iterable<Store> getAllEggs() {
+    public Iterable<Egg> getAllEggs(int idEgg) {
         return storeRepository.findAll();
     }
-};
+
+    public void addEgg(int idEgg) {
+        Egg egg= new Egg(idEgg);
+        storeRepository.save(egg);
+    }
+}
