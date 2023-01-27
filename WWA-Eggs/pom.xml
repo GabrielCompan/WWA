@@ -8,11 +8,11 @@
 		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.hatching</groupId>
-	<artifactId>hatching</artifactId>
+	<groupId>com.eggs</groupId>
+	<artifactId>eggs</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>hatching</name>
-	<description>hatching</description>
+	<description>eggs</description>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
