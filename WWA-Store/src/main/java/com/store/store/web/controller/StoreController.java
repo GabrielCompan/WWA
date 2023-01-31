@@ -1,4 +1,4 @@
-package com.WWAStore.WWAStoreService.web.controller;
+package com.store.store.web.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

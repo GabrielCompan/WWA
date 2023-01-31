@@ -1,4 +1,4 @@
-package com.mfaget.storeservice;
+package com.store.storeservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
