@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 class ValueDto {
     public int value;
 }
@@ -23,9 +25,14 @@ public class TrainerController {
 
     @CrossOrigin()
     @PostMapping(path="/trainers/addEgg/{idTrainer}")
-    public @ResponseBody String addNewUser(@PathVariable int idTrainer, @RequestBody ValueDto idEgg) {
-        trainerService.addEgg(idTrainer, idEgg.value);
-        return "Saved";
+    public @ResponseBody Trainer addNewEgg(@PathVariable int idTrainer, @RequestBody ValueDto idEgg) {
+        return trainerService.addEgg(idTrainer, idEgg.value);
+    }
+
+    @CrossOrigin()
+    @PostMapping(path="/trainers/withDrawEgg/{idTrainer}")
+    public @ResponseBody Trainer withdrawEgg(@PathVariable int idTrainer, @RequestBody ValueDto idEgg) {
+        return trainerService.withdrawEgg(idTrainer, idEgg.value);
     }
 
     @CrossOrigin()
@@ -36,26 +43,31 @@ public class TrainerController {
 
     @CrossOrigin()
     @PostMapping(path="/trainers/withdrawPokedollar/{idTrainer}")
-    public int withdrawPokedollar(@PathVariable int idTrainer, @RequestBody ValueDto value) {
+    public Trainer withdrawPokedollar(@PathVariable int idTrainer, @RequestBody ValueDto value) {
         return trainerService.withdrawPokedollar(idTrainer, value.value);
     }
 
     @CrossOrigin()
     @GetMapping(path="/trainers/allTrainers")
-    public Iterable<Trainer> withdrawPokedollar() {
+    public Iterable<Trainer> allTrainers() {
         return trainerService.allTrainers();
     }
 
     @CrossOrigin()
+    @GetMapping(path="/trainers/{idTrainer}")
+    public Optional<Trainer> getTrainerbyId(@PathVariable int idTrainer) {
+        return trainerService.trainerbyId(idTrainer);
+    }
+
+    @CrossOrigin()
     @PostMapping(path="/trainers/addPokemon/{idTrainer}")
-    public String addPokemon(@RequestParam int idTrainer, @RequestBody ValueDto idPokemon) {
-        trainerService.addPokemon(idTrainer, idPokemon.value);
-        return "Saved";
+    public Trainer addPokemon(@RequestParam int idTrainer, @RequestBody ValueDto idPokemon) {
+        return trainerService.addPokemon(idTrainer, idPokemon.value);
     }
     @CrossOrigin()
     @PostMapping(path="/trainers/withdrawPokemon/{idTrainer}")
-    public String withdrawPokemon(@RequestParam int idTrainer, @RequestBody ValueDto idPokemon) {
-        trainerService.withdrawPokemon(idTrainer, idPokemon.value);
-        return "Saved";
+    public Trainer withdrawPokemon(@RequestParam int idTrainer, @RequestBody ValueDto idPokemon) {
+        return trainerService.withdrawPokemon(idTrainer, idPokemon.value);
+
     }
 }

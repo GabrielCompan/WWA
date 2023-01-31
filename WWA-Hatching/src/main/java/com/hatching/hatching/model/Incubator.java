@@ -1,11 +1,11 @@
 package com.hatching.hatching.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.sql.Timestamp;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Incubator {
@@ -13,8 +13,15 @@ public class Incubator {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private int idEgg;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Egg> eggs;
+    public void addEgg(int idEgg) {
+        this.eggs.add(new Egg(idEgg));
+    }
 
+    public void withdrawEgg(int idEgg) {
+        this.eggs.remove(new Egg(idEgg));
+    }
     private String nameEgg;
 
     private Timestamp timeStart;
@@ -43,12 +50,7 @@ public class Incubator {
         this.timeStart = timeStart;
     }
 
-    public int getIdEgg() {
-        return idEgg;
+    public Collection<Object> getEggs() {
+        return Collections.singleton(eggs);
     }
-
-    public void setIdEgg(int idEgg) {
-        this.idEgg = idEgg;
-    }
-
 }

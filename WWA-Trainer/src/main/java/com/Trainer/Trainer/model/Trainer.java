@@ -19,7 +19,10 @@ public class Trainer {
 
     public void addEgg(int idEgg) {
         this.eggs.add(new Egg(idEgg));
+    }
 
+    public void withdrawEgg(int idEgg) {
+        this.eggs.remove(new Egg(idEgg));
     }
 
     public void addPokemon(int idPokemon) {
@@ -32,7 +35,7 @@ public class Trainer {
     }
 
     private enum type {User, Bot};
-        private int pokeDollar;
+    private int pokeDollar;
     public int getId() {
         return id;
     }

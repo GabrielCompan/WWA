@@ -5,6 +5,8 @@ import com.Trainer.Trainer.repository.TrainerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service
 public class TrainerService {
@@ -24,10 +26,11 @@ public class TrainerService {
         return trainerRepository.findById(idtrainer).orElse(null);
     }
 
-    public void addEgg(int idEgg, int idTrainer) {
+    public Trainer addEgg(int idEgg, int idTrainer) {
         Trainer trainer = getTrainerbyId(idTrainer);
         trainer.addEgg(idEgg);
         trainerRepository.save(trainer);
+        return trainer;
     }
 
     public Trainer addPokedollar(int idTrainer, int value) {
@@ -39,7 +42,7 @@ public class TrainerService {
 
     }
 
-    public int withdrawPokedollar(int idTrainer, int value) {
+    public Trainer withdrawPokedollar(int idTrainer, int value) {
         Trainer trainer = getTrainerbyId(idTrainer);
         int valuedb = trainer.getPokeDollar();
         int newvalue = valuedb - value;
@@ -51,24 +54,37 @@ public class TrainerService {
             trainer.setPokeDollar(newvalue);
         }
         trainerRepository.save(trainer);
-        return newvalue;
+        return trainer;
 
     }
 
-    public void addPokemon(int idTrainer, int idPokemon) {
+    public Trainer addPokemon(int idTrainer, int idPokemon) {
         Trainer trainer = getTrainerbyId(idTrainer);
         trainer.addPokemon(idPokemon);
         trainerRepository.save(trainer);
+        return trainer;
     }
 
-    public void withdrawPokemon(int idTrainer, int idPokemon) {
+    public Trainer withdrawPokemon(int idTrainer, int idPokemon) {
         Trainer trainer = getTrainerbyId(idTrainer);
         trainer.withdrawPokemon(idPokemon);
         trainerRepository.save(trainer);
+        return trainer;
     }
 
     public Iterable<Trainer> allTrainers() {
         return trainerRepository.findAll();
+    }
+
+    public Optional<Trainer> trainerbyId(int idTrainer) {
+        return trainerRepository.findById(idTrainer);
+    }
+
+    public Trainer withdrawEgg(int idTrainer, int value) {
+        Trainer trainer = getTrainerbyId(idTrainer);
+        trainer.withdrawEgg(value);
+        trainerRepository.save(trainer);
+        return trainer;
     }
 }
 
