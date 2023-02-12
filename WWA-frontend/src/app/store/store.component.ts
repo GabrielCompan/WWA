@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Egg} from '../model/egg';
+import {StoreService} from '../Services/Store/store.service';
 
 @Component({
   selector: 'app-shop',
@@ -9,6 +10,8 @@ import {Egg} from '../model/egg';
 export class StoreComponent {
 
   eggList!: Egg[];
+
+  constructor(private storeService: StoreService) { }
 
   buyEgg(id: number){}
 }
