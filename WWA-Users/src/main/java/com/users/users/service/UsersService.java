@@ -12,12 +12,13 @@ public class UsersService {
 
     private UsersRepository usersRepository;
 
-    public void saveUser(String name, String email, String password) {
+    public Users saveUser(String name, String email, String password) {
         Users n = new Users();
         n.setName(name);
         n.setMail(email);
         n.setPassword(password);
         usersRepository.save(n);
+        return n;
     }
     public Iterable<Users> getAllUsers() {
         return usersRepository.findAll();
