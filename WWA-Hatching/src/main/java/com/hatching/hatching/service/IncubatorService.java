@@ -2,6 +2,7 @@ package com.hatching.hatching.service;
 
 import com.hatching.hatching.model.Incubator;
 import com.hatching.hatching.repository.IncubatorRepository;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class IncubatorService {
         if (n == null) {
             throw new IllegalArgumentException("Incubator not found");
         }
-        else if (n.getEggs().size() == 1) {
+        else if (n.getEggs().size() > 1) {
             throw new IllegalArgumentException("Incubator is full");
         }
         else {
@@ -51,7 +52,7 @@ public class IncubatorService {
         }
     }
 
-    public Incubator withdrawEgg(int id, int idEgg) {
+    public Incubator withdrawEgg(int id, int idegg) {
         Incubator n = incubatorRepository.findById(id).orElse(null);
         if (n == null) {
             throw new IllegalArgumentException("Incubator not found");
@@ -60,13 +61,17 @@ public class IncubatorService {
             throw new IllegalArgumentException("Incubator is empty");
         }
         else {
-            n.withdrawEgg(idEgg);
+            n.getEggs().remove(idegg);
             incubatorRepository.save(n);
             return n;
         }
     }
     public Iterable<Incubator> getAllIncubators() {
         return incubatorRepository.findAll();
+    }
+
+    public Incubator getIncubatorbyId(int idIncubator) {
+        return incubatorRepository.findById(idIncubator).orElse(null);
     }
 };
 

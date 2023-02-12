@@ -53,4 +53,7 @@ public class Incubator {
     public Collection<Object> getEggs() {
         return Collections.singleton(eggs);
     }
+    public int getEggId() {
+        return eggs.get(0).getId();
+    }
 }

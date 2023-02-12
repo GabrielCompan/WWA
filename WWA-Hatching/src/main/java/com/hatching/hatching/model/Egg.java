@@ -18,4 +18,11 @@ public class Egg {
         this.timeStart = new Timestamp((System.currentTimeMillis()/1000));
     }
 
+    public int getidEgg() {
+        return this.idEgg;
+    }
+
+    public int getId() {
+        return this.idEgg;
+    }
 }
