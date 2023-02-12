@@ -16,7 +16,7 @@ export class HatchingApiService {
   // Send a GET request to the API to get a list of items-
   getHatching():Observable<Incubator[]>{
     console.log("api called");
-    return this.http.get<Egg[]>(`${this.baseUrl}/hatching`);
+    return this.http.get<Egg[]>(`${this.baseUrl}/hatching/all`);
   }
 
   // Send a GET request to the API to get an item by id
@@ -27,5 +27,17 @@ export class HatchingApiService {
   // Send a POST request to the API to hatch an egg
   hatchEgg(egg: Egg) {
     return this.http.post<Pokemon>(`${this.baseUrl}/eggs/hatch`, egg);
+  }
+
+  addEgg(idIncubator: number, egg: Egg) {
+    return this.http.post<Egg>(`${this.baseUrl}/hatching/add/${idIncubator}`, egg);
+  }
+
+  createIncubators(){
+    return this.http.get<Incubator>(`${this.baseUrl}/hatching`);
+  }
+
+  withdrawEgg(idIncubator: number){
+    return this.http.post<Egg>(`${this.baseUrl}/hatching/withdraw/${idIncubator}`, null);
   }
 }
