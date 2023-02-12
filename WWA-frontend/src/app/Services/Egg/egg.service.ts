@@ -14,4 +14,9 @@ export class EggService {
     console.log("service called");
     return this.eggApiService.getEggs();
   }
+
+  addEgg(egg: Egg): Observable<Egg> {
+    console.log("service called");
+    return this.eggApiService.addEgg(egg);
+  }
 }

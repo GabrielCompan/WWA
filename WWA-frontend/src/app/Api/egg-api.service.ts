@@ -24,7 +24,7 @@ export class EggApiService {
 
   // Send a POST request to the API to add a new egg
   addEgg(egg: Egg): Observable<Egg> {
-    return this.http.post<Egg>(`${this.baseUrl}/eggs`, egg);
+    return this.http.post<Egg>(`${this.baseUrl}/eggs/add`, egg);
   }
 
   // Send a PUT request to the API to update an egg
