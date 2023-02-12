@@ -18,4 +18,9 @@ export class EggComponent implements OnInit {
       console.log("component called");
       this.eggService.getEggs().subscribe(eggs => console.log(eggs));
     }
+
+    addEgg(): void {
+      console.log("component called");
+      this.eggService.addEgg({id: 1, name: "test", price: 100, hatchingTime: 1000}).subscribe(egg => console.log(egg));
+    }
 }

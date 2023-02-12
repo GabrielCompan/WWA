@@ -22,6 +22,7 @@ const routes: Routes = [
   {path: 'team', component: TeamComponent},
   {path: 'fight', component: FightComponent},
   {path: 'trainer', component: TrainerComponent},
+  {path: 'egg', component: EggComponent},
   {path: '**', redirectTo: 'home'}
 ];
 
